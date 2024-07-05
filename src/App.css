@@ -248,9 +248,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-size: 20px;
   margin-bottom: 16px;
   display: inline-block;
+  margin-top: 10px; /* Add space above the tagline */
 }
 .banner h1 {
-  font-size: 65px;
+  font-size: 55px;
   font-weight: 700;
   letter-spacing: 0.8px;
   line-height: 1;
@@ -282,9 +283,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .banner button:hover svg {
   margin-left: 25px;
 }
-.banner img {
-  animation: updown 3s linear infinite;
-}
+
 @keyframes updown {
     0% {
         transform: translateY(-20px);
@@ -616,3 +615,32 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   letter-spacing: 0.5px;
   margin-top: 20px;
 }
+.profile-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+ 
+}
+
+.profile-img {
+  width: 250px; /* Adjust the size as needed */
+  height: 250px; /* Ensure the height matches the width for a square image */
+  border-radius: 50%; /* Makes the image circular */
+  margin-right: 20px; /* Adjust the spacing between the image and the text */
+  object-fit: cover; /* Ensures the image covers the entire area without distortion */
+  position: static; /* Ensure the image is static */
+}
+
+.header-img {
+  width: 100%; /* Adjust as needed */
+  height: auto;
+  object-fit: cover;
+  position: static; /* Ensure the image is static */
+}
+
+.tagline {
+  font-size: 1.2em; /* Adjust the font size as needed */
+  margin: 1.2em; /* Remove any default margins */
+}
+
+

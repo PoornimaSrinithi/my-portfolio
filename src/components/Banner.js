@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.svg";
+import profileImg from "../assets/img/profile.jpg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -10,7 +11,7 @@ export const Banner = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const toRotate = [ "Passionate Software Developer"];
+  const toRotate = ["Passionate Software Developer"];
   const period = 2000;
 
   useEffect(() => {
@@ -18,8 +19,8 @@ export const Banner = () => {
       tick();
     }, delta);
 
-    return () => { clearInterval(ticker) };
-  }, [text])
+    return () => { clearInterval(ticker); };
+  }, [text]);
 
   const tick = () => {
     let i = loopNum % toRotate.length;
@@ -39,31 +40,35 @@ export const Banner = () => {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
       setDelta(500);
-    } 
     }
-  
+  };
 
   return (
     <section className="banner" id="home">
       <Container>
-        <Row className="aligh-items-center">
+        <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
-            {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline">Welcome to my Portfolio</span>
-                <h1>{`Hello Everyone! I'm Poornima Srinithi A`} </h1>
-                <h2><span className="wrap">{text}</span></h2>
+              {({ isVisible }) =>
+                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                  <div className="profile-container">
+                    <div className="profile-img-container">
+                      <img src={profileImg} alt="Profile" className="profile-img" />
+                    </div>
+                    <span className="tagline">Welcome to my Portfolio</span>
+                  </div>
+                  <h1 style={{ fontSize: '2em' }}>{`Hello Everyone! I'm Poornima Srinithi A`}</h1>
+                  <h2><span className="wrap">{text}</span></h2>
                   <p>Through my work, I strive to blend creativity with functionality, crafting experiences that leave a lasting impression. Join me as we explore the intersection of innovation and imagination.</p>
                   <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
-                  </div>}
+                </div>}
             </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>
-                  <img src={headerImg} alt="Header Img"/>
+            <img src={headerImg} alt="Header Img" className="header-img" />
           </Col>
         </Row>
       </Container>
     </section>
-  )
-}
+  );
+};

@@ -17,7 +17,7 @@ export const Footer = () => {
               <a href="#"><img src={navIcon1} alt="Icon" /></a>
               <a href="#"><img src={navIcon2} alt="Icon" /></a>
             </div>
-            <p>Copyrights 2024. All Rights Reserved</p>
+            <p>Copyrights 2024 Poornima Srinithi. All Rights Reserved</p>
           </Col>
         </Row>
       </Container>
