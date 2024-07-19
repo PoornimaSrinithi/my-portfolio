@@ -5,6 +5,7 @@ import profileImg from "../assets/img/profile.jpg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import myCV from "../assets/pdf/913121205070_Poornima Srinithi A Resume.pdf"; // Correct import path
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -52,14 +53,16 @@ export const Banner = () => {
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   <div className="profile-container">
-                    <div className="profile-img-container">
-                      <img src={profileImg} alt="Profile" className="profile-img" />
-                    </div>
+                    
                     <span className="tagline">Welcome to my Portfolio</span>
                   </div>
                   <h1 style={{ fontSize: '2em' }}>{`Hello Everyone! I'm Poornima Srinithi A`}</h1>
                   <h2><span className="wrap">{text}</span></h2>
                   <p>Through my work, I strive to blend creativity with functionality, crafting experiences that leave a lasting impression. Join me as we explore the intersection of innovation and imagination.</p>
+                  
+                  <a href={myCV} download="913121205070_Poornima Srinithi A Resume.pdf">
+                    <button>Download My CV</button>
+                  </a>
                   <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
                 </div>}
             </TrackVisibility>
